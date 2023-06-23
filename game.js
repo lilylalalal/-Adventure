@@ -27,7 +27,7 @@ function printHelp() {
 
 function startGame() {
     console.clear();
-    console.log("Welcome to App Academy Adventure!\n");
+    console.log("Welcome to A Adventure!\n");
 
     rl.question('Please enter your name: ', (name) => {
         console.clear();

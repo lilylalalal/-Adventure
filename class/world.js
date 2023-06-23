@@ -43,7 +43,7 @@ class World {
             let itemData = itemList[i];
             let newItem;
 
-            if (itemData.isFood) {
+            if (itemData.isFood === false) {
                 console.log("ERROR: Food not supported yet.");
                 // Fill this in
                 return;

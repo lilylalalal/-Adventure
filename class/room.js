@@ -1,3 +1,4 @@
+const { Item } = require('./item');
 class Room {
 
     constructor(name, description) {
@@ -44,11 +45,14 @@ class Room {
     }
 
     getItemByName(name) {
+        //if (this.items.indexof(name) >= 0){
+            //return name
+            let roomItem = this.items.find(el => el.name === name);
 
-        // Fill this in
-    }
+            return roomItem;
+        }
+            }
 
-}
 
 module.exports = {
   Room,
