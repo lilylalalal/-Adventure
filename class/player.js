@@ -37,9 +37,18 @@ class Player {
     takeItem(itemName) {
         // Fill this in
         //Picks up an item from a room into the player's inventory
-        this.items.push(itemName)
-        let RMindex = Room.items.indexOf(itemName)
-        Room.items.splice(RMindex,1)
+        //1: Add item into Player list
+        let roomitem = this.currentRoom.getItemByName(itemName)
+        //console.log(roomitem)
+        this.items.push(roomitem)
+        //console.log("thisitems:",this.items)
+        //remove item from Room list
+        let newarray = []
+
+        let found = this.currentRoom.items.filter(item => item !== roomitem )
+        
+        this.currentRoom.items= found
+       
 
 
         return this.items , Room.items
@@ -69,17 +78,8 @@ class Player {
        return find
         // Fill this in
         //Retrieves an item from a player's inventory by name
-        for(let i =0 ; i< this.items.length;i++) {
-            let dict = this.items[i]
-            console.log("Dict:",dict)
-            console.log("Value: ", dict.name)
-            if (dict.name === name){
-             return dict}
-             else {
-             return undefined }}
-             }
-            }
-
+    }
+}
 
 let item1 = new Item("rock", "just a simple rock");
 let item2 = new Item("book", "just a simple book");
@@ -93,10 +93,10 @@ room.items.push(item2);
 //console.log(player.items)
 //console.log(player.getItemByName("rock"))
 
-player.takeItem("rock");
-console.log(player.items)
-console.log(room.items)
-console.log(player.getItemByName("rock"))
+//player.takeItem("rock");
+//console.log("PLAYER: ",player.items)
+//console.log("Room: ",room.items)
+//console.log(player.getItemByName("rock"))
 
 module.exports = {
   Player,
