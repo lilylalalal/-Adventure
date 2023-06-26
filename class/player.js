@@ -93,10 +93,10 @@ room.items.push(item2);
 //console.log(player.items)
 //console.log(player.getItemByName("rock"))
 
-//player.takeItem("rock");
-//console.log("PLAYER: ",player.items)
-//console.log("Room: ",room.items)
-//console.log(player.getItemByName("rock"))
+player.takeItem("rock");
+console.log("PLAYER: ",player.items)
+console.log("Room: ",room.items)
+console.log(player.getItemByName("rock"))
 
 module.exports = {
   Player,
